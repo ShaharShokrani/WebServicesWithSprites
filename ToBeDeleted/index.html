@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Sprites</title>
+    <script src="lib/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="css/sprites.css" type="text/css" media="screen, projection" />
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:50134/PaymentWebService.asmx/RoomBookingStatus",
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                data: "{}",
+                dataType: "json",
+                success: handleSuccess,
+                error: handleError
+            });
+        });
+
+        function handleSuccess(data, status) {
+            console.log("Success");
+            console.log(data);
+            console.log(status);
+        }
+
+        function handleError(xmlRequest) {
+            console.log("Success");
+            console.log(xmlRequest);
+        }
+    </script>
+</head>
+
+<body>
+    <span class="home icon"><a href="#">Home</a></span>
+    <span class="contact icon"><a href="#">Contact</a></span>
+</body>
+</html>
